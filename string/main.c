@@ -11,26 +11,20 @@
 /*
  * 
  */
+
+//int getLength(char *pstr);
 int main() {
-    //array character declare, read and write
-    char name[20];
-    printf("Enter your name:\n");
-    //scanf("%s", name); // not work with multiple words 
-    gets(name);
-    printf("The name you enter is %s\n", name);
-    //puts(name);
-    
-    //count the length of the string before null
-    /*int count;
-    while(name[count] != '\0') {
-        count++;
-    }
-    
-    //valid for loop without statement
-    for(count=0; name[count] != '\0'; count++);
-    printf("Length = %d\n",count);*/
-    
-    printf("Length = %d\n",getLength(name));
+    //
+    char str1[20];
+    char str2[20];
+    printf("Enter your first string:\n"); 
+    gets(str1);
+    printf("Original length of str1 is %d\n", getLength(str1));
+    printf("Enter you second string\n");
+    gets(str2);
+    concat(str1, str2);
+    printf("Now str1 is %s\n", str1);
+    printf("Now the length of str1 is %d\n", getLength(str1));
     return (EXIT_SUCCESS);
 }
 
@@ -38,4 +32,15 @@ int getLength(char *pstr) {
     int i;
     for (i=0; pstr[i] !='\0'; i++);
     return i;
+}
+
+int concat(char *original, char *append) {
+    int count =0;
+    int i;
+    while(original[count] !='\0')
+        count++;
+    
+    for(i=0; i<getLength(append);i++)
+        original[count+i] = append[i];
+    original[count+i] = '\0';
 }
