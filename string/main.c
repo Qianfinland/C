@@ -14,9 +14,13 @@
 
 //int getLength(char *pstr);
 int main() {
-    //
-    char str1[20];
-    char str2[20];
+    
+    //char str1[50];
+    //char str2[50];
+    char *str1;
+    char *str2;
+    str1 = (char *)malloc(100);
+    str2 = (char *)malloc(50);
     printf("Enter your first string:\n"); 
     gets(str1);
     printf("Original length of str1 is %d\n", getLength(str1));
@@ -35,12 +39,21 @@ int getLength(char *pstr) {
 }
 
 int concat(char *original, char *append) {
-    int count =0;
+    /*int count =0;
     int i;
     while(original[count] !='\0')
         count++;
     
     for(i=0; i<getLength(append);i++)
         original[count+i] = append[i];
-    original[count+i] = '\0';
+    original[count+i] = '\0';*/
+    
+    //using pointer increasement to achieve the same goal
+    while(*original != '\0')
+        original++;
+    while(*append != '\0') {
+        *original = *append;
+        original++;
+        append++;
+    }
 }
