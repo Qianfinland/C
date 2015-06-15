@@ -13,20 +13,19 @@
  */
 
 int main() {
-    int n1, n2, n3;
-    n1 = n2 =n3 = 10;
-    int* pn2;
-    pn2 = &n2;
-    
-    n3++;
-    printf("%d\n", n3);
-    Foo(n1, pn2);
-    printf("%d %d\n", n1, n2); //10 and 11
+    int n1, n2;
+    n1 = 1;
+    n2 = 2;
+    swap(n1, n2);
+    printf("In main method: %d and %d\n", n1, n2); 
     return 0;
 }
 
 
-void Foo(int n, int* pn) {
-    n++;
-    (*pn)++;
+void swap (int n, int m) {
+    int tem;
+    tem = n;
+    n = m;
+    m = tem;
+    printf("In swap method: %d and %d\n", n, m); 
 }
