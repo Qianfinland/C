@@ -12,7 +12,12 @@
  */
 int main() {
     int arr[3] = {1, 8, 12};
-    printf("%d %d", &arr[0], arr); //value of array variable = address of the 1st element
+    printf("%d %d\n", &arr[0], arr); //value of array variable = address of the 1st element
+    
+    printf("%d %d\n", *arr, arr[0]);  // 1 1     
+    printf("%d %d\n", *(arr+1), arr[1]);// 8 8 
+    printf("%d %d\n", *(arr+2), arr[2]);//12 12
+            
     return 0;
 }
 
