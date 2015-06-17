@@ -19,8 +19,14 @@ int main() {
     printf("%d %d\n", *(arr+2), arr[2]);//12 12*/
     
     int i;
+    /*for(i = 0; i < 3; i++)
+        printf("%d %d %d\n", *(arr+i), arr[i], i[arr]);*/
+    
+    printf("prove array is a pointer and each element can be accessed by pointer\n");
+    int *parr;
+    parr = arr;
     for(i = 0; i < 3; i++)
-        printf("%d %d %d\n", *(arr+i), arr[i], i[arr]);
+        printf("%d %d \n",*(parr+i), parr[i]);
             
     return 0;
 }
