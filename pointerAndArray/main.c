@@ -30,9 +30,14 @@ int main() {
      
     printf("Substraction of one pointer from another\n");
     int *p1, *p2;
-    p1=&arr[0];
+    /*p1=&arr[0];
     p2=&arr[2];
-    printf("%d\n", p2-p1); //*(arr+2) - *(arr+0) = 2
+    printf("%d\n", p2-p1); //(arr+2) - (arr+0) = 2*/
+    p1= arr;
+    p2 = p1+2;
+    printf("%d\n", *p2);// should be arr[2] = 12
+    
+    
     return 0;
 }
 
