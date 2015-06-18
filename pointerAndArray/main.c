@@ -33,10 +33,18 @@ int main() {
     /*p1=&arr[0];
     p2=&arr[2];
     printf("%d\n", p2-p1); //(arr+2) - (arr+0) = 2*/
+    
+    /*printf("example of pointer\n");
     p1= arr;
     p2 = p1+2;
     printf("%d\n", *p2);// should be arr[2] = 12
+    printf("%d %d %d\n", p2, arr+2, &arr[2]);*/
     
+    p1 = & arr[0];
+    p2 = arr;
+    //if p1 and p2 are same, value of them are also same, as they point to same address
+    if(p1 == p2)
+        printf("%d %d\n", *p1, *p2);
     
     return 0;
 }
