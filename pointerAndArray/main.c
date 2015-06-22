@@ -46,11 +46,18 @@ int main() {
     if(p1 == p2)
         printf("%d %d\n", *p1, *p2);
     
+    printf("2D array with pointer\n");
     int ar1[2][3] = {{1,2,3}, {4,5,6}};
     int (*ptr)[3];
     ptr = ar1;
     printf("%d %d\n", ptr[0],*(ptr+0));
-    printf("%d %d\n", ptr[0][2],*(*(ptr+0)+2));
+    printf("%d %d\n", ptr[0][2],*(*(ptr+0)+2));//3
+    int m,n; //ar1[m][n] = *(*(ar1+m)+n)
+    for(m=0; m<2; m++) {
+        for(n=0; n<3;n++)
+            printf("%d %d\n", ar1[m][n], *(*(ar1+m)+n));
+    }
+    
     return 0;
 }
 
