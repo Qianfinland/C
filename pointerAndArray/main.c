@@ -46,6 +46,11 @@ int main() {
     if(p1 == p2)
         printf("%d %d\n", *p1, *p2);
     
+    int ar1[2][3] = {{1,2,3}, {4,5,6}};
+    int (*ptr)[3];
+    ptr = ar1;
+    printf("%d %d\n", ptr[0],*(ptr+0));
+    printf("%d %d\n", ptr[0][2],*(*(ptr+0)+2));
     return 0;
 }
 
