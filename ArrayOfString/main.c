@@ -32,6 +32,11 @@ int main() {
         strcat(allmessages, messages[i]);
     }
     printf("%s", allmessages);
+    
+    //Important 
+    free(allmessages);
+    for(i=0; i < 5; i++)
+        free(messages[i]);
     return 0;
 }
 
