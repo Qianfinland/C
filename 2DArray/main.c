@@ -19,10 +19,24 @@ int main() {
     }*/
     
     //Allow user to enter value for the 2D Array
-    int arr[3][4];//decalre 2D array
+    int arr[3][Y];
+    int arr2[3][Y];
+    int sumarr[3][Y];
     int r, c;
-    BuildMatrix(arr, 3, Y);//call method
-    PrintMatrix(arr, 3, Y);//call method to print
+    printf("Build and print arr:\n");
+    BuildMatrix(arr, 3, 4);//call method
+    PrintMatrix(arr, 3, 4);//call method to print
+    printf("Build and print arr2:\n");
+    BuildMatrix(arr2, 3, 4);
+    PrintMatrix(arr2, 3, 4);
+    
+    for(r=0;r<3;r++) {
+        for(c=0;c<4;c++) {
+            sumarr[r][c]=arr[r][c] + arr2[r][c];
+        }
+    }
+    printf("sum of the two array is:\n");
+    PrintMatrix(sumarr, 3, Y);
     return 0;
 }
 
@@ -30,7 +44,7 @@ void BuildMatrix(int ar[][Y], int rows, int cols) {
     int i,j;
     for(i=0;i<rows;i++) {
         for(j=0;j<cols;j++) {
-            printf("Enter value %d row %d col:", i, j);
+            printf("Enter value row[%d] col[%d]:", i, j);
             scanf("%d", &ar[i][j]);
         }
     }
