@@ -9,6 +9,8 @@
 void BuildMatrix(int ar[][Y], int rows, int cols);
 void PrintMatrix(int ar[][Y], int rows, int cols);
 int main() {
+    int arr3[2][3][4]={{{1,2,3,4},{5,6,7,8},{9,10,11,12}},{{1,2,3,4},{5,6,7,8},{9,10,11,12}}};
+    printf("%d\n",arr3[1][2][3]);
     /*initialize and declare 2D array
      * int arr[2][3] = {1,2,3,4,5,6};//={{1,2,3}, {4,5,6}};
     int r, c;
