@@ -6,11 +6,14 @@
 #include <stdio.h>
 
 void PrintArray(int arr[], int size);
+void IncreaseArray(int arr[], int size);
 int main() {
     int a1[3] = {1, 2, 3};
     PrintArray(a1, 3);
     int a2[5] = {5, 6, 7, 8, 9};
-    PrintArray(a2, 5);
+    IncreaseArray(a2, 5);
+    //arr will change due modification in IncreaseArray function
+    PrintArray(a2, 5); 
     return 0;
 }
 
@@ -21,4 +24,10 @@ void PrintArray(int arr[], int size) {
         printf("%d ", arr[i]);
     }
     printf("\n");
+}
+
+void IncreaseArray(int arr[], int size) {
+    int i;
+    for(i = 0; i < size; i++)
+        arr[i]++;
 }
