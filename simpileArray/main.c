@@ -1,11 +1,11 @@
 /* 
  * File:   main.c
+ * Author: qxzhou
  *
- * Created on June 27, 2015, 11:36 PM
+ * Created on June 27, 2015, 11:57 PM
  */
 
 #include <stdio.h>
-
 
 int main() {
     int arr[10];
@@ -35,4 +35,3 @@ int main() {
     printf("average is %d\n", sum/size);
     return 0;
 }
-
