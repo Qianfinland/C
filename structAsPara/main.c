@@ -23,8 +23,17 @@ typedef struct Student
     DATE DOB;
 } STUDENT;
 
-
+void PrintStudentDetails(STUDENT s);
+STUDENT ReadStudentDetails();
 int main() {
+    STUDENT s1;
+    s1 = ReadStudentDetails();
+    PrintStudentDetails(s1);
+    return 0;
+}
+
+STUDENT ReadStudentDetails()
+{
     STUDENT s1;
     printf("Enter RollNo: ");
     scanf("%d", &s1.RollNo);
@@ -36,14 +45,12 @@ int main() {
     scanf("%lf", &s1.TotalMarks);
     printf("Date of Birth(dd/mm/yyyy): ");
     scanf("%d/%d/%d", &s1.DOB.Day, &s1.DOB.Month, &s1.DOB.Year);
-    printf("%s (DOB:%d/%d/%d), student with RollNo %d of class %d scored %lf", 
-            s1.Name, s1.DOB.Day, s1.DOB.Month, s1.DOB.Year, s1.RollNo,
-            s1.Class, s1.TotalMarks);
-    return 0;
+    return s1;
 }
-
-void PrintStudentDetails() 
+void PrintStudentDetails(STUDENT s) 
 {
-
+    printf("%s (DOB:%d/%d/%d), student with RollNo %d of class %d scored %lf", 
+            s.Name, s.DOB.Day, s.DOB.Month, s.DOB.Year, s.RollNo,
+            s.Class, s.TotalMarks);
 }
 
