@@ -25,11 +25,14 @@ typedef struct Student
 
 void PrintStudentDetails(STUDENT s);
 STUDENT ReadStudentDetails();
+void ChangeMarks(STUDENT *pstu);
 int main() {
     STUDENT s1;
     s1 = ReadStudentDetails();
     PrintStudentDetails(s1);
-    PrintStudentDetails(s1);// test value of RollNo changes or not
+    //PrintStudentDetails(s1);// test value of RollNo changes or not
+    ChangeMarks(&s1);
+    PrintStudentDetails(s1);
     return 0;
 }
 
@@ -56,3 +59,8 @@ void PrintStudentDetails(STUDENT s)
     s.RollNo = 1000;// modify member value
 }
 
+void ChangeMarks(STUDENT *pstu)
+{
+    printf("Enter the new Marks: ");
+    scanf("%lf", &(*pstu).TotalMarks);
+}
