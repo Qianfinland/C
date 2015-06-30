@@ -29,6 +29,7 @@ int main() {
     STUDENT s1;
     s1 = ReadStudentDetails();
     PrintStudentDetails(s1);
+    PrintStudentDetails(s1);// test value of RollNo changes or not
     return 0;
 }
 
@@ -49,8 +50,9 @@ STUDENT ReadStudentDetails()
 }
 void PrintStudentDetails(STUDENT s) 
 {
-    printf("%s (DOB:%d/%d/%d), student with RollNo %d of class %d scored %lf", 
+    printf("%s (DOB:%d/%d/%d), student with RollNo %d of class %d scored %lf\n", 
             s.Name, s.DOB.Day, s.DOB.Month, s.DOB.Year, s.RollNo,
             s.Class, s.TotalMarks);
+    s.RollNo = 1000;// modify member value
 }
 
