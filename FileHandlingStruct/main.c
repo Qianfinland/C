@@ -13,7 +13,8 @@ struct Student
     char Name[30];
     double points;
 } ;
-int main() {
+
+/*int main() {
     struct Student s1;
     char ch;
     FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/student.txt", "w+");
@@ -43,5 +44,29 @@ int main() {
    
     fclose(file);
     return 0;
-}
+}*/
 
+int main() {
+    struct Student s1;
+    char ch;
+    FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/student.txt", "r");
+    if(file == NULL)
+    {
+        printf("Error in reading student info\n");
+        return 1;
+    }
+    while(1)
+    {
+        fscanf(file, "%d\t%s\t%lf\n", &s1.RollNo, s1.Name, &s1.points);
+        printf("\n%d\t%s\t%lf\n", s1.RollNo, s1.Name, s1.points);
+        printf("Continue? (Y/N)");
+        do
+                ch = getchar();
+        while (isspace(ch));
+        if(ch == 'N' || ch == 'n')
+            break;
+    }
+   
+    fclose(file);
+    return 0;
+}
