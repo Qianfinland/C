@@ -1,1 +1,4 @@
-Today is tortilla day!
+This is example of putting multiple line of strings to a txt file
+Second line content
+I'm in the third line :)
+End now by ctrl+D 

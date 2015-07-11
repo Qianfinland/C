@@ -23,12 +23,22 @@ int main() {
         return 1;
     }
     
-    char c[1000];
+    /*char c[1000];
     printf("Enter a sentence to the file!\n");
     fgets(c, sizeof(c), stdin);
     //gets(c);//dangerous to use 
-    fprintf(file2, "%s", c);
+    fprintf(file2, "%s", c);*/
     
+    printf("Enter multiple lines of strings and end by ctrl+D\n");
+    while(1)
+    {
+        char ch;
+        ch = getchar();
+        //putchar(ch);//
+        if(ch == EOF)
+            break;
+        putc(ch, file2);
+    }
     fclose(file);
     fclose(file2);
     return 0;
