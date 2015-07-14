@@ -15,8 +15,8 @@ struct Student
 } ;
 
 int main() {
-    struct Student s1;
-    struct Student s2;
+    struct Student s1[3];
+    struct Student s2[3];
     char ch;
     //FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/student.txt", "w+");
     FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/studentbinary.dat", "w+b");
@@ -25,33 +25,25 @@ int main() {
         printf("Error in saving student info\n");
         return 1;
     }
-    while(1)
+    
+    int i;
+    for(i = 0; i < 3; i++)
     {
         printf("Enter the RollNo: ");
-        scanf("%d", &s1.RollNo);
+        scanf("%d", &s1[i].RollNo);
         printf("Enter the name: ");
-        scanf("%s", s1.Name);
+        scanf("%s", s1[i].Name);
         printf("Enter the points: ");
-        scanf("%lf", &s1.points);
-        //fprintf(file, "%d\t%s\t%lf\n", s1.RollNo, s1.Name, s1.points);
-        fwrite(&s1, sizeof(s1), 1, file);
-        printf("Continue? (Y/N)");
-        fflush(stdin);
-        do
-                ch = getchar();
-        while (isspace(ch));
-        //printf("ch is %c\n", ch);
-        if(ch == 'N' || ch == 'n')
-            break;
+        scanf("%lf", &s1[i].points);
     }
+    fwrite(s1, sizeof(s1[0]), 3, file);
     /****start to read binary file */
     fseek(file, 0, 0);
-    while(1)
+    fread(s2, sizeof(s2[0]), 3, file);
+    for(i=0; i<3; i++)
     {
-        int n = fread(&s2, sizeof(s2), 1, file);
-        if(n == 0)
-            break;
-        printf("%d %s %lf\n", s2.RollNo, s2.Name, s2.points);
+        
+        printf("%d %s %lf\n", s2[i].RollNo, s2[i].Name, s2[i].points);
     }
     /**end of reading binary file */
     fclose(file);
