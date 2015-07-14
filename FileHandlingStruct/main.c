@@ -16,6 +16,7 @@ struct Student
 
 int main() {
     struct Student s1;
+    struct Student s2;
     char ch;
     //FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/student.txt", "w+");
     FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/studentbinary.dat", "w+b");
@@ -35,6 +36,7 @@ int main() {
         //fprintf(file, "%d\t%s\t%lf\n", s1.RollNo, s1.Name, s1.points);
         fwrite(&s1, sizeof(s1), 1, file);
         printf("Continue? (Y/N)");
+        fflush(stdin);
         do
                 ch = getchar();
         while (isspace(ch));
@@ -42,7 +44,16 @@ int main() {
         if(ch == 'N' || ch == 'n')
             break;
     }
-   
+    /****start to read binary file */
+    fseek(file, 0, 0);
+    while(1)
+    {
+        int n = fread(&s2, sizeof(s2), 1, file);
+        if(n == 0)
+            break;
+        printf("%d %s %lf\n", s2.RollNo, s2.Name, s2.points);
+    }
+    /**end of reading binary file */
     fclose(file);
     return 0;
 }
