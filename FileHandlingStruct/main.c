@@ -14,10 +14,11 @@ struct Student
     double points;
 } ;
 
-/*int main() {
+int main() {
     struct Student s1;
     char ch;
-    FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/student.txt", "w+");
+    //FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/student.txt", "w+");
+    FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/studentbinary.dat", "w+b");
     if(file == NULL)
     {
         printf("Error in saving student info\n");
@@ -31,8 +32,8 @@ struct Student
         scanf("%s", s1.Name);
         printf("Enter the points: ");
         scanf("%lf", &s1.points);
-        fprintf(file, "%d\t%s\t%lf\n", s1.RollNo, s1.Name, s1.points);
-        
+        //fprintf(file, "%d\t%s\t%lf\n", s1.RollNo, s1.Name, s1.points);
+        fwrite(&s1, sizeof(s1), 1, file);
         printf("Continue? (Y/N)");
         do
                 ch = getchar();
@@ -44,9 +45,9 @@ struct Student
    
     fclose(file);
     return 0;
-}*/
+}
 
-int main() {
+/*int main() {
     struct Student s1;
     char ch;
     FILE *file = fopen("/home/qxzhou/NetBeansProjects/daydaylearning/FileHandlingStruct/student.txt", "r");
@@ -69,4 +70,4 @@ int main() {
    
     fclose(file);
     return 0;
-}
+}*/
