@@ -9,6 +9,13 @@ int main() {
     scanf("%d", &size);
     int *par;
     par = (int*)malloc(sizeof(int)*size);
+    //par = (int*)calloc(size, sizeof(int));
+    printf("Before reading numbers\n");
+    for(i = 0; i < size; i++)
+    {
+        printf("%d ", par[i]);
+    }
+    printf("\n");
     for(i = 0; i< size; i++)
     {
         printf("Enter number[%d]\n", i);
