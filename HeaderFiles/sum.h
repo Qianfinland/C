@@ -1,6 +1,10 @@
-int Add(int a, int b);
 
-#ifndef SUM_H
+#ifndef SUM
+     int Add(int a, int b); 
+     #define SUM
+#endif
+
+/*#ifndef SUM_H
 #define	SUM_H
 
 #ifdef	__cplusplus
@@ -14,5 +18,5 @@ extern "C" {
 }
 #endif
 
-#endif	/* SUM_H */
+#endif*/
 
