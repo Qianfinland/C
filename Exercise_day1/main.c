@@ -4,8 +4,18 @@ void copy();
 int main() { 
     printf("Exercise about arithmetic compound operators\n");
     //Exercise 6
-    
-    printf("Results:");
+    int x;	
+    int y;	
+    x=10;	
+    y=5;	
+    printf("Result:\n");	
+    printf("x value\t y value\t Expressions\t Result\n");	
+    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=y+3 \t \t| x=%d",y+3);printf("\n");	
+    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=y-2 \t \t| x=%d",y-2);printf("\n");	
+    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=y*5 \t \t| x=%d",y*5);printf("\n");	
+    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=x/y \t \t| x=%d",x/y);printf("\n");	
+    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=x mod y\t| x=%d",x%y);printf("\n");	
+    /*printf("Results:");
     int row;
     for(row = 0; row < 6; row++)
     {
@@ -60,7 +70,7 @@ int main() {
                 printf("\t");
                 printf("x=0\t");
             }
-    }
+    }*/
     //printf("Simple exercises about variables and data types \n");
     //variablesDataTypes();
     
