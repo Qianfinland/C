@@ -1,14 +1,79 @@
 
 #include <stdio.h>
-
-int main() {
-    printf("Simple exercises about variables and data types \n");
-    variablesDataTypes();
+void copy();
+int main() { 
+    printf("Exercise about arithmetic compound operators\n");
+    //Exercise 6
     
+    printf("Results:");
+    int row;
+    for(row = 0; row < 6; row++)
+    {
+        printf("\n");
+            if (row == 0 ) 
+            {
+                printf("x value\t");
+                printf("\t");
+                printf("y value\t");
+                printf("\t");
+                printf("expressions\t");
+                printf("results\t");
+            }
+            
+            
+            if(row == 1 )
+            {
+                copy();
+                printf("x=y+3\t");
+                printf("\t");
+                printf("x=8\t");
+            }
+            
+            if(row == 2)
+            {
+                copy();
+                printf("x=y-2\t");
+                printf("\t");
+                printf("x=3\t");
+            }
+            
+            if(row == 3)
+            {
+                copy();
+                printf("x=y*5\t");
+                printf("\t");
+                printf("x=25\t");
+            }
+            
+            if(row == 4)
+            {
+                copy();
+                printf("x=x/y\t");
+                printf("\t");
+                printf("x=2\t");
+            }
+            
+            if(row == 5)
+            {
+                copy();
+                printf("x=x%y\t");
+                printf("\t");
+                printf("x=0\t");
+            }
+    }
+    //printf("Simple exercises about variables and data types \n");
+    //variablesDataTypes();
     
     return 0;
 }
 
+void copy()
+{
+    printf("10   |\t");
+    printf("\t");
+    printf("5    |\t");
+    printf("\t");
+}
 void variablesDataTypes()
 {
     //Exercise 1
