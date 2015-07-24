@@ -30,4 +30,8 @@ int main ()
     stop:
     return 0;
 }
-
+/*if enter 3, output below
+        Number is 2
+        Number is 1
+        NUmber is 0
+*/
