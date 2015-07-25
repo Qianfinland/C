@@ -1,88 +1,30 @@
 
 #include <stdio.h>
-void copy();
+void arithmetic();
 int main() { 
     printf("Exercise about arithmetic compound operators\n");
-    //Exercise 6
-    int x;	
-    int y;	
-    x=10;	
-    y=5;	
-    printf("Result:\n");	
-    printf("x value\t y value\t Expressions\t Result\n");	
-    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=y+3 \t \t| x=%d",y+3);printf("\n");	
-    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=y-2 \t \t| x=%d",y-2);printf("\n");	
-    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=y*5 \t \t| x=%d",y*5);printf("\n");	
-    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=x/y \t \t| x=%d",x/y);printf("\n");	
-    printf("%d    |\t",x);printf(" %d     |",y);printf("\t x=x mod y\t| x=%d",x%y);printf("\n");	
-    /*printf("Results:");
-    int row;
-    for(row = 0; row < 6; row++)
-    {
-        printf("\n");
-            if (row == 0 ) 
-            {
-                printf("x value\t");
-                printf("\t");
-                printf("y value\t");
-                printf("\t");
-                printf("expressions\t");
-                printf("results\t");
-            }
-            
-            
-            if(row == 1 )
-            {
-                copy();
-                printf("x=y+3\t");
-                printf("\t");
-                printf("x=8\t");
-            }
-            
-            if(row == 2)
-            {
-                copy();
-                printf("x=y-2\t");
-                printf("\t");
-                printf("x=3\t");
-            }
-            
-            if(row == 3)
-            {
-                copy();
-                printf("x=y*5\t");
-                printf("\t");
-                printf("x=25\t");
-            }
-            
-            if(row == 4)
-            {
-                copy();
-                printf("x=x/y\t");
-                printf("\t");
-                printf("x=2\t");
-            }
-            
-            if(row == 5)
-            {
-                copy();
-                printf("x=x%y\t");
-                printf("\t");
-                printf("x=0\t");
-            }
-    }*/
+    arithmetic();
+    
+    
     //printf("Simple exercises about variables and data types \n");
     //variablesDataTypes();
     
     return 0;
 }
 
-void copy()
+void arithmetic()
 {
-    printf("10   |\t");
-    printf("\t");
-    printf("5    |\t");
-    printf("\t");
+    int x;	
+    int y;	
+    x=10;	
+    y=5;	
+    printf("Result:\n");	
+    printf("x value\t y value\t Expressions\t Result\n");	
+    printf("%d    |\t", x); printf(" %d     |\t",y); printf(" x+=y\t\t");printf("| x=%d\n",x+y);
+    printf("%d    |\t", x); printf(" %d     |\t",y); printf(" x-=y-2\t\t");printf("| x=%d\n",x-(y-2));
+    printf("%d    |\t", x); printf(" %d     |\t",y); printf(" x*=y*5\t\t");printf("| x=%d\n",x*y*5);
+    printf("%d    |\t", x); printf(" %d     |\t",y); printf(" x/=x/y\t\t");printf("| x=%d\n",x/(x/y));
+    printf("%d    |\t", x); printf(" %d     |\t",y); printf(" x%=y\t\t");printf("| x=%d\n",x%y);
 }
 void variablesDataTypes()
 {
