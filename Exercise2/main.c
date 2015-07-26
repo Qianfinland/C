@@ -5,13 +5,31 @@ void loop1();
 void sameAsLoop1();
 void loop2();
 void loop3();
+void loop();
+
 int main() {
     
-    loop3();//sameAsLoop3();
+    int n, i;
+    int arr[n];
+    printf("Enter number of positive numbers: ");
+    scanf("%d", &n);
+    printf("\n");
+    for (i = 0; i < n; i++) 
+    {
+        printf("Enter number[%d]: ", i);
+        scanf("%d", &arr[i]);
+        if (arr[i] < 0)
+            break;
+    }
+    //loop3();//sameAsLoop3();
     //loop2();
     //loop1();
     //sameAsLoop1();
     return 0;
+}
+void loop()
+{
+    
 }
 void sameAsLoop3()
 {
