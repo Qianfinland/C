@@ -4,13 +4,43 @@
 void loop1();
 void sameAsLoop1();
 void loop2();
+void loop3();
 int main() {
-    loop2();
+    
+    loop3();//sameAsLoop3();
+    //loop2();
     //loop1();
     //sameAsLoop1();
     return 0;
 }
-
+void sameAsLoop3()
+{
+    int i, j;
+    for (i = 1; i <= 9; i = i + 2) {
+        for (j = 1; j <= i; ++j) printf("*");
+        printf("\n");
+    }
+    for (i = 9; i >= 1; i = i - 2) {
+        for (j = i; j >= 1; --j) printf("*");
+        printf("\n");
+    } 
+}
+void loop3()
+{
+    int i, j;
+    for (i = 1; i <= 5; i++) {
+        for (j = 2 * i - 1; j > 0; j--) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    for (i = 5; i >= 1; i--) {
+        for (j = 2 * i - 1; j > 0; j--) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
 void loop2()
 {
     int m, n, o;
