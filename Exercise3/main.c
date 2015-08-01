@@ -3,12 +3,25 @@
 #include <stdlib.h>
 void selectionSortAlgorithm();
 void AscendingOrder();
+void multiplicationTable();
 int main() {
+    multiplicationTable();
     selectionSortAlgorithm();
     AscendingOrder();
     return 0;
 }
-
+void multiplicationTable()
+{
+    int i, j;
+    for(i=1; i<=9; i++)
+    {
+        for(j=1; j<=9; j++)
+        {
+            printf("%d*%d=%d\t", j, i, j*i);
+        }
+        printf("\n");
+    }
+}
 void AscendingOrder()
 {
     int arr[5] = {20, 12, 10, 15, 2};
