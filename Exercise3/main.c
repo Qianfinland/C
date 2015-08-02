@@ -6,12 +6,58 @@ void AscendingOrder();
 void multiplicationTable();
 void pickupMaxMin();
 int main() {
-    pickupMaxMin();
+    int arr[10]; 
+    int i,j,temp;
+    int mode[10][2]; 
+    for (i=0; i<10; i++)
+    {
+        printf("Enter arr[%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+    //find the max value and min value 
+     
+    //sort array to find max and min values 
+    for(i=0;i<10;i++)
+        for(j=9;j>i;j--)
+            if(arr[j]<arr[j-1]) 
+            { 
+                int temp=arr[j]; 
+                arr[j]=arr[j-1];
+                arr[j-1]=temp; 
+            }   
+    
+    printf("Max=%d,Min=%d\n",arr[9],arr[0]); 
+    //initialize 2D array storing numbers of occurrences, and values 
+   for(i=0;i<2;i++) 
+       for(j=0;j<10;j++)mode[j][i]=0; 
+   mode[0][0]=1; 
+   //find model 
+   for(i=0;i<10;i++) 
+       for(j=0;j<10;j++) 
+           if(arr[i]==arr[j+1]) 
+           {
+               ++mode[i][0];
+               mode[i][1]=arr[i];
+           } 
+   
+        //find max occurrence 
+        int max; 
+        int k=0; 
+        max=mode[0][0]; 
+        for(j=0;j<10;j++) 
+            if(max<mode[j][0]){max=mode[j][0];k=j;} 
+    
+        //print result 
+        printf("The most occurring item:%d \n",mode[k][1]); 
+        printf("It occurs %d times\n",max); 
+    
+    /*pickupMaxMin();
     multiplicationTable();
     selectionSortAlgorithm();
-    AscendingOrder();
+    AscendingOrder();*/
     return 0;
 }
+
 
 void pickupMaxMin()
 {
