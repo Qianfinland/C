@@ -5,7 +5,69 @@ void selectionSortAlgorithm();
 void AscendingOrder();
 void multiplicationTable();
 void pickupMaxMin();
+void MaxMinMostCommon();
+void AsendingDesending();
 int main() {
+    AsendingDesending();
+    //MaxMinMostCommon();
+    /*pickupMaxMin();
+    multiplicationTable();
+    selectionSortAlgorithm();
+    AscendingOrder();*/
+    return 0;
+}
+
+void AsendingDesending()
+{
+    int arr[10], i, j, max, min;
+    printf("Enter 10 integers\n");
+    for(i=0; i< 10; i++)
+    {
+        printf("Enter arr[%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+    
+    for(i=0; i<10;i++)
+    {
+        for(j=i+1; j< 10; j++)
+        {
+            if(arr[i] >= arr[j])
+            {
+                max = arr[i];
+                arr[i] = arr[j];
+                arr[j] = max;
+            }
+        }
+    }
+    
+    printf("Ascending order: ");
+    for(i=0; i<10; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    
+    printf("\n");
+    for(i=0; i < 10; i++)
+    {
+        for(j=i+1; j< 10; j++)
+        {
+            if(arr[i] <= arr[j])
+            {
+                min = arr[i];
+                arr[i] = arr[j];
+                arr[j] = min;
+            }
+        }
+    }
+    
+    printf("Descending order: ");
+    for(i=0; i<10; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+}
+void MaxMinMostCommon()
+{
     int arr[10]; 
     int i,j,temp;
     int mode[10][2]; 
@@ -50,15 +112,7 @@ int main() {
         //print result 
         printf("The most occurring item:%d \n",mode[k][1]); 
         printf("It occurs %d times\n",max); 
-    
-    /*pickupMaxMin();
-    multiplicationTable();
-    selectionSortAlgorithm();
-    AscendingOrder();*/
-    return 0;
 }
-
-
 void pickupMaxMin()
 {
     int a[3], i, max, step;
