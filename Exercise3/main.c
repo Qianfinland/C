@@ -11,20 +11,38 @@ void MenuForStudentRecord();
 void DataMenu();
 int main() {
     
-    int choice, i, j, studentID;
+    int choice, i, j,studentID, temp,finalScores[4], idresult;
     int data[4][5] = { 
         {1232, 10, 23, 45, 56},
-        {2986, 45, 43, 24, 78},
-        {3654, 34, 45, 40, 60},
-        {4690, 67, 38, 65, 56}
+        {2367, 45, 43, 24, 78},
+        {3650, 34, 45, 40, 60},
+        {4002, 67, 38, 65, 56}
     };
+    for(i=0; i<4; i++)
+    {
+        finalScores[i]=data[i][4];
+        //printf("%d ", finalScores[i]);
+    }
+    for(i=0; i<4; i++)
+    {
+        for(j=i+1; j<4;j++)
+        {
+            if(finalScores[i]>finalScores[j])
+            {
+                temp = finalScores[i];
+                finalScores[j] = temp;
+                finalScores[i] = finalScores[j];
+            }
+        }
+    }
     MenuForStudentRecord();
-    printf("Please enter your choice: ");
+    printf("\nPlease enter your choice: ");
     scanf("%d", &choice);
-    printf("Your choice is :%d\n", choice);
-    DataMenu();
+    //printf("Your choice is :%d\n", choice);
+    
     if(choice == 1)
     {
+        DataMenu();
         for(i = 0; i < 4; i++)
         {
             for(j=0; j < 5; j++)
@@ -39,6 +57,9 @@ int main() {
     {
         printf("Please enter the student ID: ");
         scanf("%d", &studentID);
+        DataMenu();
+        
+        
         for(i = 0; i < 4; i++)
         {
             if(data[i][0] == studentID)
@@ -51,10 +72,14 @@ int main() {
             }
             else
             {
-                printf("Error, there is no such student ID \n");
-                break;
+                printf("Error, no such student ID\n");
             }
-        }      
+        }
+    }
+    else if(choice == 3)
+    {
+        printf("The lowest final score is %d \n", finalScores[0]);
+        printf("The lowest final score is %d \n", finalScores[3]);
     }
         
     //AsendingDesending();
