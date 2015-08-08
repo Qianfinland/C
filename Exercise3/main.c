@@ -7,8 +7,57 @@ void multiplicationTable();
 void pickupMaxMin();
 void MaxMinMostCommon();
 void AsendingDesending();
+void MenuForStudentRecord();
+void DataMenu();
 int main() {
-    AsendingDesending();
+    
+    int choice, i, j, studentID;
+    int data[4][5] = { 
+        {1232, 10, 23, 45, 56},
+        {2986, 45, 43, 24, 78},
+        {3654, 34, 45, 40, 60},
+        {4690, 67, 38, 65, 56}
+    };
+    MenuForStudentRecord();
+    printf("Please enter your choice: ");
+    scanf("%d", &choice);
+    printf("Your choice is :%d\n", choice);
+    DataMenu();
+    if(choice == 1)
+    {
+        for(i = 0; i < 4; i++)
+        {
+            for(j=0; j < 5; j++)
+            {
+                printf("|%d      ", data[i][j]);
+            }
+            printf("\n");
+        }
+        
+    }
+    else if(choice == 2)
+    {
+        printf("Please enter the student ID: ");
+        scanf("%d", &studentID);
+        for(i = 0; i < 4; i++)
+        {
+            if(data[i][0] == studentID)
+            {
+                for(j=0; j < 5; j++)
+                {
+                    printf("|%d      ", data[i][j]);
+                }
+                printf("\n");
+            }
+            else
+            {
+                printf("Error, there is no such student ID \n");
+                break;
+            }
+        }      
+    }
+        
+    //AsendingDesending();
     //MaxMinMostCommon();
     /*pickupMaxMin();
     multiplicationTable();
@@ -17,6 +66,21 @@ int main() {
     return 0;
 }
 
+void DataMenu()
+{
+    printf("===============================================\n");
+    printf("|StudentId | Quiz1 | Quiz2 | Mid-Term | Final |\n");
+    printf("===============================================\n");
+}
+void MenuForStudentRecord()
+{
+    printf("=======================\n");
+    printf("            MENU       \n");
+    printf("=======================\n");
+    printf("1.View all students’ records\n");
+    printf("2.View a student's records by ID\n");
+    printf("3. Show the highest and the lowest final scores\n");
+}
 void AsendingDesending()
 {
     int arr[10], i, j, max, min;
