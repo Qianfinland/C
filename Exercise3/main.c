@@ -9,9 +9,9 @@ void MaxMinMostCommon();
 void AsendingDesending();
 void MenuForStudentRecord();
 void DataMenu();
+void print_array(int a[], int num_elements);
 int main() {
-    
-    int choice, i, j,studentID, temp,finalScores[4], idresult;
+    int choice, i, j,studentID, temp,finalScores[4], IDs[4], result;
     int data[4][5] = { 
         {1232, 10, 23, 45, 56},
         {2367, 45, 43, 24, 78},
@@ -21,8 +21,9 @@ int main() {
     for(i=0; i<4; i++)
     {
         finalScores[i]=data[i][4];
-        //printf("%d ", finalScores[i]);
+        IDs[i] = data[i][0];
     }
+   
     for(i=0; i<4; i++)
     {
         for(j=i+1; j<4;j++)
@@ -57,22 +58,25 @@ int main() {
     {
         printf("Please enter the student ID: ");
         scanf("%d", &studentID);
-        DataMenu();
-        
-        
-        for(i = 0; i < 4; i++)
+        //printf("studentId: %d\n", studentID);
+        result = find_index(IDs, 4, studentID);
+        if (result == -1)
         {
-            if(data[i][0] == studentID)
+            printf("You entered value %d is not found in the studentIDs\n", studentID);
+        }
+        else
+        {
+            printf("The record of student whose studentID %d is: \n", studentID);
+            DataMenu();
+            for(i=0; i<4; i++)
             {
-                for(j=0; j < 5; j++)
+                if(data[i][0] == studentID)
                 {
-                    printf("|%d      ", data[i][j]);
+                    for(j=0; j<5;j++)
+                    {
+                        printf("|%d      ", data[i][j]);
+                    }
                 }
-                printf("\n");
-            }
-            else
-            {
-                printf("Error, no such student ID\n");
             }
         }
     }
@@ -91,6 +95,40 @@ int main() {
     return 0;
 }
 
+int find_index(int a[], int num_elements, int value)
+{
+   int i;
+   for (i=0; i<num_elements; i++)
+   {
+	 if (a[i] == value)
+	 {
+	    return(value);  /* it was found */
+	 }
+   }
+   return(-1);  /* if it was not found */
+}
+
+void print_array(int a[], int num_elements)
+{
+   int i;
+   for(i=0; i<num_elements; i++)
+   {
+	 printf("%d ", a[i]);
+   }
+   printf("\n");
+}
+
+int Test_Find_Value(int arr[4], int value)
+{
+    int i;
+    for(i=0; i < 4; i++)
+    {
+        if(arr[i] == value)
+            return 1;
+        else
+            return -1;
+    }
+}
 void DataMenu()
 {
     printf("===============================================\n");
