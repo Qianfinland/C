@@ -9,8 +9,22 @@ void MaxMinMostCommon();
 void AsendingDesending();
 void MenuForStudentRecord();
 void DataMenu();
+void StudentRecord();
 int main() {
-    int choice, i, j,studentID, temp,finalScores[4], IDs[4], result;
+    
+    StudentRecord();   
+    //AsendingDesending();
+    //MaxMinMostCommon();
+    /*pickupMaxMin();
+    multiplicationTable();
+    selectionSortAlgorithm();
+    AscendingOrder();*/
+    return 0;
+}
+
+void StudentRecord()
+{
+    int choice, i, j,studentID,finalScores[4], IDs[4], result;
     int data[4][5] = { 
         {1232, 10, 23, 45, 56},
         {2367, 45, 43, 24, 78},
@@ -75,16 +89,7 @@ int main() {
         printf("The lowest final score is %d \n", finalScores[0]);
         printf("The lowest final score is %d \n", finalScores[3]);
     }
-        
-    //AsendingDesending();
-    //MaxMinMostCommon();
-    /*pickupMaxMin();
-    multiplicationTable();
-    selectionSortAlgorithm();
-    AscendingOrder();*/
-    return 0;
 }
-
 int NumbersInAscending(int a[],int num_elements)
 {
     int i, j,max;
