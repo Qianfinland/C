@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-void selectionSortAlgorithm();
+void selectionSortAlgorithmDescending();
 void AscendingOrder();
 void multiplicationTable();
 void pickupMaxMin();
@@ -12,13 +12,13 @@ void DataMenu();
 void StudentRecord();
 int main() {
     
-    StudentRecord();   
-    //AsendingDesending();
+    //StudentRecord();   
+    AsendingDesending();
     //MaxMinMostCommon();
-    /*pickupMaxMin();
-    multiplicationTable();
-    selectionSortAlgorithm();
-    AscendingOrder();*/
+    //pickupMaxMin();
+    //multiplicationTable();
+    //selectionSortAlgorithmDescending();
+    //AscendingOrder();
     return 0;
 }
 
@@ -107,6 +107,24 @@ int NumbersInAscending(int a[],int num_elements)
     }
     return max;
 }
+
+int NumbersInDescending(int a[],int num_elements)
+{
+    int i, j,min;
+    for(i = 0; i < num_elements; i++)
+    {
+        for(j=i+1; j<num_elements; j++)
+        {
+            if(a[i] <= a[j])
+            {
+                min = a[i];
+                a[j] = min;
+                a[i] = a[j];
+            }
+        }
+    }
+    return min;
+}
 int find_index(int a[], int num_elements, int value)
 {
    int i;
@@ -158,6 +176,7 @@ void AsendingDesending()
             }
         }
     }
+
     
     printf("Ascending order: ");
     for(i=0; i<10; i++)
@@ -235,7 +254,7 @@ void MaxMinMostCommon()
 void pickupMaxMin()
 {
     int a[3], i, max, step;
-    printf("Enter three integer numbers\n");
+    printf("Enter three integer numbers: ");
     scanf("%d %d %d", &a[0], &a[1],&a[2]);
     //ascending order those numbers
     for(i=0; i<3; i++)
@@ -274,37 +293,19 @@ void multiplicationTable()
 void AscendingOrder()
 {
     int arr[5] = {20, 12, 10, 15, 2};
-    int min, i, step;
-    for (i = 0; i < 5; i++) {
-        for (step = i + 1; step < 5; step++) {
-            if (arr[i] > arr[step]) {
-                min = arr[i];
-                arr[i] = arr[step];
-                arr[step] = min;
-            }
-        }
-    }
+    int i;
+    NumbersInAscending(arr,5);
     printf("Ascending order:\n");
     for (i = 0; i < 5; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");
 }
-void selectionSortAlgorithm()
+void selectionSortAlgorithmDescending()
 {
     int arr[5] = {20, 12, 10, 15, 2};
-    int max, i, step;
-
-    for (i = 0; i < 5; i++) {
-        for (step = i + 1; step < 5; step++) {
-            if (arr[i] < arr[step]) {
-                max = arr[step];
-                arr[step] = arr[i];
-                arr[i] = max;
-
-            }
-        }
-    }
+    int i;
+    NumbersInDescending(arr,5);
     printf("Descending order:\n");
     for (i = 0; i < 5; i++) {
         printf("%d ", arr[i]);
