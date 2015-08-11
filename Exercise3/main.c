@@ -9,7 +9,6 @@ void MaxMinMostCommon();
 void AsendingDesending();
 void MenuForStudentRecord();
 void DataMenu();
-void print_array(int a[], int num_elements);
 int main() {
     int choice, i, j,studentID, temp,finalScores[4], IDs[4], result;
     int data[4][5] = { 
@@ -23,19 +22,10 @@ int main() {
         finalScores[i]=data[i][4];
         IDs[i] = data[i][0];
     }
-   
-    for(i=0; i<4; i++)
-    {
-        for(j=i+1; j<4;j++)
-        {
-            if(finalScores[i]>finalScores[j])
-            {
-                temp = finalScores[i];
-                finalScores[j] = temp;
-                finalScores[i] = finalScores[j];
-            }
-        }
-    }
+    //printf("Sort final score of all students\n");
+    NumbersInAscending(finalScores,4);
+    //printf("max final score %d\n", NumbersInAscending(finalScores,4));
+    
     MenuForStudentRecord();
     printf("\nPlease enter your choice: ");
     scanf("%d", &choice);
@@ -95,6 +85,23 @@ int main() {
     return 0;
 }
 
+int NumbersInAscending(int a[],int num_elements)
+{
+    int i, j,max;
+    for(i = 0; i < num_elements; i++)
+    {
+        for(j=i+1; j<num_elements; j++)
+        {
+            if(a[i] >= a[j])
+            {
+                max = a[i];
+                a[j] = max;
+                a[i] = a[j];
+            }
+        }
+    }
+    return max;
+}
 int find_index(int a[], int num_elements, int value)
 {
    int i;
@@ -108,27 +115,7 @@ int find_index(int a[], int num_elements, int value)
    return(-1);  /* if it was not found */
 }
 
-void print_array(int a[], int num_elements)
-{
-   int i;
-   for(i=0; i<num_elements; i++)
-   {
-	 printf("%d ", a[i]);
-   }
-   printf("\n");
-}
 
-int Test_Find_Value(int arr[4], int value)
-{
-    int i;
-    for(i=0; i < 4; i++)
-    {
-        if(arr[i] == value)
-            return 1;
-        else
-            return -1;
-    }
-}
 void DataMenu()
 {
     printf("===============================================\n");
